@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Texture: {fileID: 2800000, guid: db68e1429077f5e41b6a302c4ac36788, type: 3}
+  m_Texture: {fileID: 2800000, guid: 0291908e418f2f0419cc254f93070537, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -148,8 +148,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.10000038, y: -.800000191}
-  m_SizeDelta: {x: -17.7000008, y: -19.7999992}
+  m_AnchoredPosition: {x: -9.85499954, y: -5.74999905}
+  m_SizeDelta: {x: 6.21000195, y: -36.5}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22498320
 RectTransform:
@@ -178,12 +178,36 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_AnchoredPosition.x
-      value: 2.70000005
+      value: -9.85499954
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SizeDelta.x
+      value: 6.21000195
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.74999905
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SizeDelta.y
+      value: -36.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 0291908e418f2f0419cc254f93070537, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 121958}
