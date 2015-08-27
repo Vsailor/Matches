@@ -7,6 +7,11 @@ public class LevelsScript : MonoBehaviour {
     public int[] StartMatches;
     public System.Collections.Generic.List<int> CurrentPositions;
     int takenMatchesCount;
+
+    public void Init()
+    {
+        Start();
+    }
     public int TakenMatchesCount
     {
         get
@@ -23,6 +28,10 @@ public class LevelsScript : MonoBehaviour {
         TakenMatchesCount = 0;
         CurrentPositions = new System.Collections.Generic.List<int>();
         SetActiveUIMatches(0);
+        for (int i = 0; i < transform.FindChild("Matches").childCount; i++)
+        {
+            transform.FindChild("Matches").FindChild("Match (" + (i+1) + ")").GetComponent<MatchScript>().SetActive(false);
+        }
         foreach (var item in StartMatches)
         {
             transform.FindChild("Matches").FindChild("Match (" + item + ")").GetComponent<MatchScript>().SetActive(true);
