@@ -1464,6 +1464,7 @@ GameObject:
   - 222: {fileID: 126212644}
   - 114: {fileID: 126212643}
   - 114: {fileID: 126212642}
+  - 114: {fileID: 126212645}
   m_Layer: 5
   m_Name: RefreshButton
   m_TagString: Untagged
@@ -1526,7 +1527,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 126212643}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 126212645}
+        m_MethodName: RefreshLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &126212643
@@ -1556,6 +1568,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 126212640}
+--- !u!114 &126212645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 126212640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07511bf7e137af944a4acdfdbc196ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &133822168 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22498320, guid: 98aa0e090aa74b7479e4b92e9edeb77f,
@@ -13788,7 +13811,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Make the largest possible number by moving one match
+  m_Text: Make two triangles by moving one match
 --- !u!222 &1819223238
 CanvasRenderer:
   m_ObjectHideFlags: 0
