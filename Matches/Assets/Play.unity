@@ -4303,7 +4303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &536555045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4338,8 +4338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3749126a42fee47bfd69d665199bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTakenMatchesCount: 1
+  MaxTakenMatchesCount: 2
   StartMatches: 0100000002000000030000000400000005000000060000000700000008000000
+  FinishMatches: 
   CurrentPositions: 
 --- !u!114 &536555047
 MonoBehaviour:
@@ -8092,7 +8093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1067396812
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8183,6 +8184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxTakenMatchesCount: 2
   StartMatches: 0200000003000000040000000500000006000000
+  FinishMatches: 0100000002000000030000000400000005000000
   CurrentPositions: 
 --- !u!224 &1072855396 stripped
 RectTransform:
