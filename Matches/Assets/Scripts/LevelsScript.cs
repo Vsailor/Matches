@@ -38,10 +38,12 @@ public class LevelsScript : MonoBehaviour
         SetActiveUIMatches(0);
         for (int i = 0; i < transform.FindChild("Matches").childCount; i++)
         {
+            transform.FindChild("Matches").FindChild("Match (" + (i + 1) + ")").GetComponent<MatchScript>().Init();
             transform.FindChild("Matches").FindChild("Match (" + (i+1) + ")").GetComponent<MatchScript>().SetActive(false);
         }
         foreach (var item in StartMatches)
         {
+            transform.FindChild("Matches").FindChild("Match (" + item + ")").GetComponent<MatchScript>().Init();
             transform.FindChild("Matches").FindChild("Match (" + item + ")").GetComponent<MatchScript>().SetActive(true);
         }
 

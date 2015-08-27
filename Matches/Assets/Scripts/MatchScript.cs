@@ -44,6 +44,10 @@ public class MatchScript : MonoBehaviour
 
 
     }
+    public void Init()
+    {
+        Start();
+    }
     void Start()
     {
         var s = name.Remove(0, name.IndexOf('(')+1);
