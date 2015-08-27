@@ -98,6 +98,6 @@ public class LevelsScript : MonoBehaviour
 
     void Update()
     {
-        print(checkVictory());
+      //  print(checkVictory());
     }
 }
