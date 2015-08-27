@@ -11,9 +11,19 @@ public class MatchScript : MonoBehaviour
     {
         if (IsActive)
         {
+            bool additionalCondition = true;
+
             if (transform.parent.parent.GetComponent<LevelsScript>().MaxTakenMatchesCount >
-                transform.parent.parent.GetComponent<LevelsScript>().TakenMatchesCount)
+                transform.parent.parent.GetComponent<LevelsScript>().TakenMatchesCount
+                )
             {
+                if(transform.parent.parent.GetComponent<LevelsScript>().TakenMatchesCount==0&&
+                    transform.parent.parent.GetComponent<LevelsScript>().GetReworkedMatches().Count==
+                    transform.parent.parent.GetComponent<LevelsScript>().MaxTakenMatchesCount&&
+                    !transform.parent.parent.GetComponent<LevelsScript>().GetReworkedMatches().Contains(Number))
+                {
+                    return;
+                }
                 transform.parent.parent.GetComponent<LevelsScript>().CurrentPositions.Remove(Number);
                 transform.parent.parent.GetComponent<LevelsScript>().TakenMatchesCount++;
                 SetActive(false);

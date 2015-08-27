@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelsScript : MonoBehaviour {
     public int MaxTakenMatchesCount;
@@ -28,30 +29,24 @@ public class LevelsScript : MonoBehaviour {
         }
 
 	}
-    public bool MovementDone()
+    public List<int> GetReworkedMatches()
     {
+        List<int> answer = new List<int>();
+
         var currCopy = CurrentPositions.GetRange(0, CurrentPositions.Count);
         var startMatchesCopy = new System.Collections.Generic.List<int>();
         foreach (var item in StartMatches)
         {
             startMatchesCopy.Add(item);
-        }
-        currCopy.Sort();
-        startMatchesCopy.Sort();
-        int counter = 0;
-        for (int i = 0; i < currCopy.Count; i++)
+        };
+        foreach(var item in currCopy)
         {
-            if (currCopy[i] != startMatchesCopy[i])
-            {
-                counter++;
-            }
+            if (!startMatchesCopy.Contains(item))
+                answer.Add(item);
         }
-        if (counter / 2 == MaxTakenMatchesCount)
-        {
-            return true;
-        }
-        return false;
+        return answer;
     }
+
     public void SetActiveUIMatches(int count)
     {
         var uiMatches = transform.FindChild("UIMatches");
