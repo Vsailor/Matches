@@ -20,7 +20,6 @@ public class BoxScript : MonoBehaviour {
         int levels = PlayerPrefs.GetInt("Levels");
 
         int number = int.Parse(transform.GetComponentInChildren< UnityEngine.UI.Text>().text);
-        print(number);
         if (number > levels) return;
         Levels.transform.GetChild(number-1).gameObject.SetActive(true);
         GameObject.Find("LevelMenu").SetActive(false);

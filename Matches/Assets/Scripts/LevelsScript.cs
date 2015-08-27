@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class LevelsScript : MonoBehaviour
 {
+    public GameObject NextLevel;
     public int MaxTakenMatchesCount;
     public int[] StartMatches;
     public int[] FinishMatches;
@@ -62,7 +63,7 @@ public class LevelsScript : MonoBehaviour
         }
         return answer;
     }
-    public bool checkVictory()
+    public bool CheckVictory()
     {
 
         var currCopy = CurrentPositions.GetRange(0, CurrentPositions.Count);
@@ -95,9 +96,10 @@ public class LevelsScript : MonoBehaviour
             (uiMatches.transform.FindChild("UIMatch (" + i + ")")).gameObject.SetActive(true);
         }
     }
-
-    void Update()
+    public void ShowCongratulationMessage()
     {
-      //  print(checkVictory());
+        transform.FindChild("Task").GetComponent<UnityEngine.UI.Text>().enabled = false;
+        transform.FindChild("CongratulationsMessage").GetComponent<SpriteRenderer>().enabled = true;
+        transform.FindChild("TapScreen").GetComponent<BoxCollider2D>().enabled = true;
     }
 }

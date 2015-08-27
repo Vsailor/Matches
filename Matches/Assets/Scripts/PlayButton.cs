@@ -16,7 +16,6 @@ public class PlayButton : MonoBehaviour {
             PlayerPrefs.SetInt("Levels", 1);
         }
         
-        Levels.transform.GetChild(levels).gameObject.SetActive(true);
-        GameObject.Find("LevelMenu").SetActive(false);
+        Levels.transform.GetChild(levels-1).gameObject.SetActive(true);
     }
 }
