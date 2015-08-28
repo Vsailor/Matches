@@ -10,7 +10,7 @@ public class LevelsScript : MonoBehaviour
     public int[] FinishMatches;
     public System.Collections.Generic.List<int> CurrentPositions;
     int takenMatchesCount;
-
+    public string Task;
     public void Init()
     {
         Start();
@@ -29,6 +29,9 @@ public class LevelsScript : MonoBehaviour
     }
     void Start()
     {
+        transform.FindChild("CongratulationsMessage").GetComponent<SpriteRenderer>().enabled = false;
+        transform.FindChild("TapScreen").GetComponent<BoxCollider2D>().enabled = false;
+        Task = transform.FindChild("Task").GetComponent<UnityEngine.UI.Text>().text;
         TakenMatchesCount = 0;
         CurrentPositions = new System.Collections.Generic.List<int>();
         foreach (var item in StartMatches)
@@ -84,6 +87,23 @@ public class LevelsScript : MonoBehaviour
         }
         return true;
 
+    }
+    public void ShowSolution()
+    {
+
+        CurrentPositions.Clear();
+        var matches = transform.FindChild("Matches");
+        for (int i = 0; i < matches.childCount; i++)
+        {
+            matches.FindChild("Match (" + (i + 1) + ")").gameObject.GetComponent<MatchScript>().SetActive(false);
+        }
+        for (int i = 0; i < FinishMatches.Length; i++)
+        {
+            matches.FindChild("Match (" + FinishMatches[i] + ")").gameObject.GetComponent<MatchScript>().SetActive(true);
+            CurrentPositions.Add(FinishMatches[i]);
+        }
+        transform.FindChild("Task").GetComponent<UnityEngine.UI.Text>().text = "Solution:";
+        transform.FindChild("TapScreen").GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public void SetActiveUIMatches(int count)
