@@ -17,14 +17,14 @@
 51 +
 53 +
 55 +
-57
-60
-62
-66
-69
-82
-83
-92
-94
-97
-99
+57 more than 1 solution
+60 +
+62 more than 1 solution
+66 +
+69 +
+82 excluded
+83 excluded
+92 more than 1 solution
+94 excluded
+97 excluded
+99 excluded
