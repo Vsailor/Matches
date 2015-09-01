@@ -50,9 +50,9 @@ public class MatchScript : MonoBehaviour
     }
     void Start()
     {
-        var s = name.Remove(0, name.IndexOf('(')+1);
+        var s = name.Remove(0, name.IndexOf('(') + 1);
         Number = int.Parse(s.Remove(s.IndexOf(')')));
-        
+
         EnabledSprite = Resources.Load<Sprite>("Matches_1");
         DisabledSprite = Resources.Load<Sprite>("Matches_2");
     }

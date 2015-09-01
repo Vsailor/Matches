@@ -108,8 +108,8 @@ public class LevelsScript : MonoBehaviour
 
     public void SetActiveUIMatches(int count)
     {
-        var uiMatches = transform.FindChild("UIMatches");
-        for (int i = count + 1; i <= 5; i++)
+        var uiMatches = transform.FindChild("UIMatches");       
+        for (int i = count + 1; i <= uiMatches.childCount; i++)
         {
             (uiMatches.transform.FindChild("UIMatch (" + i + ")")).gameObject.SetActive(false);
         }
