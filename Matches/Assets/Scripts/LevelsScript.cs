@@ -74,15 +74,16 @@ public class LevelsScript : MonoBehaviour
     }
     public bool CheckVictory()
     {
-        if (CompareWithCurrent(FinishMatches) || CompareWithCurrent(AlternativeFinish1) || CompareWithCurrent(AlternativeFinish2) ||
-            CompareWithCurrent(AlternativeFinish3))
-        {
-            return true;
-        }
-        return false;
+            if (CompareWithCurrent(FinishMatches) || CompareWithCurrent(AlternativeFinish1) || CompareWithCurrent(AlternativeFinish2) ||
+                CompareWithCurrent(AlternativeFinish3))
+            {
+                return true;
+            }
+            return false;
     }
     public bool CompareWithCurrent(int[] mas)
     {
+        if (mas.Length == 0) return false;
         var currCopy = CurrentPositions.GetRange(0, CurrentPositions.Count);
         var finishMatchesCopy = new System.Collections.Generic.List<int>();
         foreach (var item in mas)
@@ -101,7 +102,6 @@ public class LevelsScript : MonoBehaviour
     }
     public void ShowSolution()
     {
-
         CurrentPositions.Clear();
         var matches = transform.FindChild("Matches");
         for (int i = 0; i < matches.childCount; i++)
