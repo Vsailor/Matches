@@ -8,6 +8,9 @@ public class LevelsScript : MonoBehaviour
     public int MaxTakenMatchesCount;
     public int[] StartMatches;
     public int[] FinishMatches;
+    public int[] AlternativeFinish1;
+    public int[] AlternativeFinish2;
+    public int[] AlternativeFinish3;
     public System.Collections.Generic.List<int> CurrentPositions;
     int takenMatchesCount;
     public string Task;
@@ -70,23 +73,30 @@ public class LevelsScript : MonoBehaviour
     }
     public bool CheckVictory()
     {
-
+        if (CompareWithCurrent(FinishMatches) || CompareWithCurrent(AlternativeFinish1) || CompareWithCurrent(AlternativeFinish2) ||
+            CompareWithCurrent(AlternativeFinish3))
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool CompareWithCurrent(int[] mas)
+    {
         var currCopy = CurrentPositions.GetRange(0, CurrentPositions.Count);
         var finishMatchesCopy = new System.Collections.Generic.List<int>();
-        foreach (var item in FinishMatches)
+        foreach (var item in mas)
         {
             finishMatchesCopy.Add(item);
         };
         currCopy.Sort();
         finishMatchesCopy.Sort();
         if (currCopy.Count != finishMatchesCopy.Count) return false;
-        for (int i = 0; i<currCopy.Count; i++)
+        for (int i = 0; i < currCopy.Count; i++)
         {
             if (currCopy[i] != finishMatchesCopy[i])
                 return false;
         }
         return true;
-
     }
     public void ShowSolution()
     {
