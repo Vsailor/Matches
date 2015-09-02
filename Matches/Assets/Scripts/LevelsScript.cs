@@ -11,6 +11,7 @@ public class LevelsScript : MonoBehaviour
     public System.Collections.Generic.List<int> CurrentPositions;
     int takenMatchesCount;
     public string Task;
+    public int StartTakenMatchesCount;
     public void Init()
     {
         Start();
@@ -32,13 +33,13 @@ public class LevelsScript : MonoBehaviour
         transform.FindChild("CongratulationsMessage").GetComponent<SpriteRenderer>().enabled = false;
         transform.FindChild("TapScreen").GetComponent<BoxCollider2D>().enabled = false;
         Task = transform.FindChild("Task").GetComponent<UnityEngine.UI.Text>().text;
-        TakenMatchesCount = 0;
+        TakenMatchesCount = StartTakenMatchesCount;
         CurrentPositions = new System.Collections.Generic.List<int>();
         foreach (var item in StartMatches)
         {
             CurrentPositions.Add(item);
         };
-        SetActiveUIMatches(0);
+        SetActiveUIMatches(TakenMatchesCount);
         for (int i = 0; i < transform.FindChild("Matches").childCount; i++)
         {
             transform.FindChild("Matches").FindChild("Match (" + (i + 1) + ")").GetComponent<MatchScript>().Init();
