@@ -33,6 +33,7 @@ public class LevelsScript : MonoBehaviour
     }
     void Start()
     {
+
         transform.FindChild("CongratulationsMessage").GetComponent<SpriteRenderer>().enabled = false;
         transform.FindChild("TapScreen").GetComponent<BoxCollider2D>().enabled = false;
         Task = transform.FindChild("Task").GetComponent<UnityEngine.UI.Text>().text;
@@ -53,7 +54,7 @@ public class LevelsScript : MonoBehaviour
             transform.FindChild("Matches").FindChild("Match (" + item + ")").GetComponent<MatchScript>().Init();
             transform.FindChild("Matches").FindChild("Match (" + item + ")").GetComponent<MatchScript>().SetActive(true);
         }
-
+      
     }
     public List<int> GetReworkedMatches()
     {
@@ -115,6 +116,7 @@ public class LevelsScript : MonoBehaviour
         }
         transform.FindChild("Task").GetComponent<UnityEngine.UI.Text>().text = "Solution:";
         transform.FindChild("TapScreen").GetComponent<BoxCollider2D>().enabled = true;
+        SetActiveUIMatches(0);
     }
 
     public void SetActiveUIMatches(int count)

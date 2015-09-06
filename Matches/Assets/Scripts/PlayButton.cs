@@ -10,6 +10,10 @@ public class PlayButton : MonoBehaviour {
         if (PlayerPrefs.HasKey("Levels"))
         {
             levels = PlayerPrefs.GetInt("Levels");
+            if (levels == 100)
+            {
+                levels = PlayerPrefs.GetInt("CurrentLevel");
+            }
         }
         else
         {

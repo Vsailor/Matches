@@ -2,12 +2,22 @@
 using System.Collections;
 
 public class NextLevelBackgroundTapScript : MonoBehaviour {
+    public GameObject MainMenu;
     public void OnMouseDown()
     {
-        var levelNuber = int.Parse(transform.parent.name.Remove(0, 5));
-        if (PlayerPrefs.GetInt("Levels") == levelNuber)
+
+        var levelNumber = int.Parse(transform.parent.name.Remove(0, 5));
+        PlayerPrefs.SetInt("CurrentLevel", levelNumber);
+        if (PlayerPrefs.GetInt("Levels") == 100 && levelNumber == 100)
         {
-            PlayerPrefs.SetInt("Levels", levelNuber + 1);
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            transform.parent.gameObject.SetActive(false);
+            MainMenu.SetActive(true);
+            return;
+        }
+        if (PlayerPrefs.GetInt("Levels") == levelNumber)
+        {
+            PlayerPrefs.SetInt("Levels", levelNumber + 1);
         }
         transform.parent.GetComponent<LevelsScript>().NextLevel.SetActive(true);
         transform.parent.transform.FindChild("Task").GetComponent<UnityEngine.UI.Text>().text = transform.parent.GetComponent<LevelsScript>().Task;

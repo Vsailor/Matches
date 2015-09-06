@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 438790}
   - 212: {fileID: 21222314}
-  - 114: {fileID: 11454400}
   - 61: {fileID: 6137424}
+  - 114: {fileID: 11442050}
   m_Layer: 0
   m_Name: Match
   m_TagString: Untagged
@@ -42,8 +42,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .870000005, y: 2.94000006}
---- !u!114 &11454400
+  m_Size: {x: 1.5, y: 2.94000006}
+--- !u!114 &11442050
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -99,7 +99,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.x
-      value: .870000005
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
@@ -112,6 +112,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 14.8999996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
